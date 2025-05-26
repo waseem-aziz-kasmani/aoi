@@ -1,5 +1,112 @@
+<!DOCTYPE html>
 <html>
-  <Body>
-    This web is for costing purpose
-  </Body>
+<Head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<link rel=stylesheet type=text/css href="CS-MAIN.css">
+<script src="JS-MAIN.js"></script>
+<script src="JS-CLICK.js"></script>
+<script src="Web_Worker-Current_Time.js"></script>
+<script src="Write_file_1_JS.js"></script>
+<script src="Write_file_2_JS.js"></script>  
+</Head>
+<body onload="timedCount()">
+<div Id="D1">READY COSTING AND CALCULATIONS</div>
+
+<div Id="D2">
+<input type="Button"   class="BT1" value="CALCULATE" id="D2_B1" onClick="D2_1()">
+<input type="Button"   class="BT1" value="OIL COST-1" id="D2_B2" onClick="D2_2()">
+<input type="Button"   class="BT1" Value="OIL COST-2" id="D2_B3" onClick="D2_3()">
+<input type="Button"   class="BT1" value="NA" id="D2_B4" onClick="D2_4()">
+<input type="Button"   class="BT1" value="NA"id="D2_B5" onClick="D2_5()">  
+</div>
+
+<!-- BOX1 ***************************************-->
+<div id="BX1">
+            
+</div>
+
+<!-- BOX2 ***************************************-->
+<div id="BX2">OIL COST-1
+<div id="BX2-1">
+  <table> 
+  <tr> <th> <div class="Tb1">OIL PRICE :</div></th> <th><div class="BT2"><input type="number" id="Var1"  onchange="CostCalculate_1()"></div> </th></tr>
+  <tr> <th> <div class="Tb1">FATTY ACID PRICE </div></th> <th> <div class="BT2"><input type="number" id="Var2" onchange="CostCalculate_1()"></div></th></tr>
+  <tr> <th> <div class="Tb1">ACID OIL PRICE : </div></th> <th> <div class="BT2"><input type="number" id="Var3" onchange="CostCalculate_1()"></div></th></tr>
+  </table>   
+</div>
+<div id="BX2-2">
+  <table> 
+  <tr > <th class="Br1"><div class="Tb1"> OIL CONSUMED :</div></th>
+       <th class="Br1"><div class="BT2"><input type="number"  id="Var4"  onchange="CostCalculate_1()"></div>
+       <div class="Tb1"><output   class="Tb1" id="Var5"   ></div></th> </tr>
+          
+  <tr> <th class="Br1"><div class="Tb1"> OIL RECEIVED :</div></th>
+       <th class="Br1"><div class="BT2"><input type="number" id="Var6" onchange="CostCalculate_1()"></div>
+       <div class="Tb1"><output  class="Tb1" id="Var7"></div></th></tr>
+ 
+  <tr> <th class="Br1"><div class="Tb1">  GROSS LOST : </div></th>
+           <th class="Br1"><div class="Tb1"><output  id="Var8"></div><div class="Tb1"><output id="Var9"></div></th></tr>
+     
+
+  </table>   
+</div>
+<div id="BX2-3">
+  <table> 
+  <tr> <th class="Br1"><div class="Tb1"> RECOVERY WAX :</div></th> 
+       <th class="Br1"><div class="BT2"><input type="number"   id="Var10" onchange="CostCalculate_1()"></div>
+        <div class="Tb1"><output id="Var11" > </div></th></tr> 
+        
+  
+  <tr> <th class="Br1"><div class="Tb1">  RECOVERY FATTY ACID </div></th> <th class="Br1">
+       <div class="BT2"><input type="number"  id="Var12" onchange="CostCalculate_1()"></div><div class="Tb1"><output id="Var13"></div></th></tr>
+  
+ <tr> <th class="Br1"><div class="Tb1">  RECOVERY ACID OIL : </div></th> <th class="Br1">
+       <div class="BT2"><input type="number"   id="Var14" onchange="CostCalculate_1()"></div><div class="Tb1"><output   id="Var15" ></div></th></tr>
+ 
+ <tr> <th class="Br1"><div class="Tb1">  TOTAL : </div></th> <th class="Br1"> <div class="Tb1"><output  id="Var16" ></div> <div class="Tb1"><output id="Var17" ></div></th></tr> 
+  </table>   
+</div>
+<div id="BX2-4">
+  <table> 
+  <tr> <th class="Br1"><div class="Tb2" > NET LOST :</div><div class="Tb2"><output id="Var18" ></div> 
+       <div class="Tb2"><output  id="Var19"></div><div class="Tb2"><output   id="Var20"></th></tr>
+  
+<tr>   <th class="Br1"> <div class="Tb1">CHEMICAL CONSUME :</div> <div class="BT2" ><input type="number" id="Var21" onchange="CostCalculate_1()"></div> 
+        <div class="Tb2"><output    id="Var22"></div><div class="Tb1"><output id="Var23"></div></th></tr>
+       
+  <tr> <th class="Br1">  <div class="Tb2">UTILITY : </div> <div class="BT2" ><input type="number" id="Var24" onchange="CostCalculate_1()"></div>
+       <div class="Tb2"><output id="Var25"></div><div class="Tb2"> <output id="Var26"></div></th></tr>
+      
+  <tr> <th class="Br1"> <div class="Tb1">TOTAL :</div>
+       <div class="Tb2"><output  id="Var27" ></div>
+       <div class="Tb2"><output  id="Var28"></div>
+       <div class="Tb2"><output  id="Var29"></div>
+       <div class="Tb2"><output  id="Var30"></div>    
+       <div class="Tb2"><output  id="Var31"></div>
+       <div class="Tb2"><output  id="Var32"></div>
+       </th></tr>
+  </table>   
+</div>
+</div>
+<!-- BOX3 COLORS RGBA****************************-->
+<div id="BX3">OIL COST-2
+  <div id="BX3-1"></div>  
+  <div id="BX3-2"></div>
+</div>
+<!-- BOX4 COLORS RGBA****************************-->
+<div id="BX4">
+  
+</div>
+<!-- BOX5 COLORS RGBA****************************-->
+<div id="BX5">
+  
+</div>
+
+<!-- FOOTER *************************************-->
+<div id="FT1"> 
+     <br>COUNTER : <output id="TX4"></output>
+     <br><output id="TX5"></output>
+</div>
+</body>
 </html>
